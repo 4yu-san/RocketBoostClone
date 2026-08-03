@@ -6,11 +6,13 @@ public class Movement : MonoBehaviour
     [SerializeField] InputAction thrust;
     [SerializeField] InputAction rotation;
     [SerializeField] float thrustStrength = 1000f;
-    [SerializeField] float rotationStrength = 1000f;
+    [SerializeField] float rotationStrength = 100f;
     Rigidbody rb;
+    AudioSource audioSource;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
     private void OnEnable()
     {
@@ -27,7 +29,15 @@ public class Movement : MonoBehaviour
 
     private void ProcessThrust(){
         if(thrust.IsPressed())
+        {
             rb.AddRelativeForce(Vector3.up * thrustStrength * Time.fixedDeltaTime);
+            if(!audioSource.isPlaying)
+                audioSource.Play();
+        }
+        else
+        {
+            audioSource.Stop();
+        }
     }
 
     private void ProcessRotation(){
@@ -39,7 +49,10 @@ public class Movement : MonoBehaviour
             ApplyRotation(-rotationStrength);
     }
 
-    private void ApplyRotation(float rotationThisFrame){
-        transform.Rotate(Vector3.forward * rotationStrength * Time.fixedDeltaTime);
+    private void ApplyRotation(float rotationThisFrame)
+    {
+        rb.freezeRotation = true; // freezing rotation so we can manually rotate
+        transform.Rotate(Vector3.forward * rotationThisFrame * Time.fixedDeltaTime);
+        rb.freezeRotation = false; // unfreezing rotation so the physics system can take over
     }
 }
