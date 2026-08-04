@@ -921,6 +921,10 @@ PrefabInstance:
       value: Rocket
       objectReference: {fileID: 0}
     - target: {fileID: 3586416646388344388, guid: 96c689de5ddf86bdea6321a9f2019e67, type: 3}
+      propertyPath: mainEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: 529116fe796094a91a035d9bb1bd059a, type: 3}
+    - target: {fileID: 3586416646388344388, guid: 96c689de5ddf86bdea6321a9f2019e67, type: 3}
       propertyPath: rotationStrength
       value: 100
       objectReference: {fileID: 0}
@@ -991,10 +995,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 529116fe796094a91a035d9bb1bd059a, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.2
-  m_Pitch: 1
+  m_Pitch: 1.44
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -1089,6 +1093,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fdaa093aee484279843cc590bde1739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionHandler
+  crashSFX: {fileID: 8300000, guid: 8a9bbf0885612446aa4fb792a8cf4811, type: 3}
+  successSFX: {fileID: 8300000, guid: fc6e3600567804d66a67b0007756680a, type: 3}
+  levelLoadDelay: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
