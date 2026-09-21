@@ -79,6 +79,7 @@ MonoBehaviour:
       m_Action: Thrust
       m_Flags: 0
     m_Flags: 0
+    m_Priority: 0
   rotation:
     m_Name: Rotation
     m_Type: 0
@@ -136,6 +137,7 @@ MonoBehaviour:
       m_Action: Rotation
       m_Flags: 8
     m_Flags: 0
+    m_Priority: 0
   thrustStrength: 1000
   rotationStrength: 100
   mainEngine: {fileID: 8300000, guid: 529116fe796094a91a035d9bb1bd059a, type: 3}
@@ -383,6 +385,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7830451523766863625}
     m_Modifications:
+    - target: {fileID: 108069772593434822, guid: cf91000b018c5e64d87fba48f5ab81b9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 108069772593434822, guid: cf91000b018c5e64d87fba48f5ab81b9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.966
+      objectReference: {fileID: 0}
+    - target: {fileID: 108069772593434822, guid: cf91000b018c5e64d87fba48f5ab81b9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.766
+      objectReference: {fileID: 0}
+    - target: {fileID: 3949704667338678115, guid: cf91000b018c5e64d87fba48f5ab81b9, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 3379977818781244498, guid: 953fe30c7b4888b418f3afc42ceefee8, type: 3}
     - target: {fileID: 6377417671358724030, guid: cf91000b018c5e64d87fba48f5ab81b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

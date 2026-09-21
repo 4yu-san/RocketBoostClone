@@ -24,7 +24,7 @@ public class CollisionHandler : MonoBehaviour
 
     private void Update()
     {
-        RespondToDebugKeys();
+        //RespondToDebugKeys();
 
     }
 
@@ -48,6 +48,10 @@ public class CollisionHandler : MonoBehaviour
         {
             case "Friendly":
                 Debug.Log("This thing is friendly");
+                break;
+            case "SkyLimit":
+                Debug.Log("Sky Limit");
+                SkyLim();
                 break;
             case "Finish":
                 Debug.Log("Finish");
@@ -73,6 +77,13 @@ public class CollisionHandler : MonoBehaviour
         //stop particles after level failed
         GetComponent<Movement>().enabled = false;
         Invoke("ReloadLevel", levelLoadDelay);
+    }
+
+    void SkyLim()
+    {
+        isControllable = false;
+        WaitForSeconds wait = new WaitForSeconds(2);
+        isControllable = true;
     }
     void StartSuccessSequence()
     {
